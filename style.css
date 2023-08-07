@@ -1,0 +1,21 @@
+@import url('./fonts.css');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: o;
+}
+
+:root {
+  --bgColor: #eff6ff;
+  --baseTextColor: #2a4a5c;
+  --buttonFC: #255a9b;
+  --buttonIN: #0076b6;
+}
+
+body {
+  background-color: var(--bgColor);
+  font-family: 'Barlow-Thin', sans-serif;
+  font-weight: 100;
+  color: var(--baseTextColor);
+}
