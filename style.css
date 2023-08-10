@@ -3,7 +3,25 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: o;
+  padding: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border: none;
+}
+label {
+  cursor: pointer;
 }
 
 :root {
@@ -11,6 +29,9 @@
   --baseTextColor: #2a4a5c;
   --buttonFC: #255a9b;
   --buttonIN: #0076b6;
+  --regularFont: 'Barlow-Regular', sans-serif;
+  --thinFont: 'Barlow-Thin';
+  --extraLightFont: 'Barlow-ExtraLight', sans-serif;
 }
 
 body {
@@ -18,4 +39,235 @@ body {
   font-family: 'Barlow-Thin', sans-serif;
   font-weight: 100;
   color: var(--baseTextColor);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 1325px;
+  display: flex;
+  column-gap: 60px;
+  background-color: white;
+}
+
+.container__img-block {
+  flex-basis: 80%;
+  background-image: url('./img/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.container__img-block img {
+  width: 150px;
+  margin: 30px 0 0 30px;
+}
+
+.containet__form-block {
+  margin: 80px 60px 80px 0;
+}
+
+.registration__sm-title {
+  font-family: var(--regularFont);
+  font-weight: 500;
+}
+.registration__sm-descr {
+  margin-top: 14px;
+}
+.registration__sm-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  column-gap: 20px;
+}
+.registration__facebook,
+.registration__linkedin {
+  padding: 10px 40px 10px 10px;
+  color: white;
+  font-size: 16px;
+  font-family: 'Barlow-Medium';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+  width: 280px;
+}
+
+.registration__facebook {
+  background-color: var(--buttonFC);
+}
+
+.registration__linkedin {
+  background-color: var(--buttonIN);
+}
+
+.registration__facebook img,
+.registration__linkedin img {
+  width: 20px;
+  height: 20px;
+}
+
+.delimiter {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  font-size: 14px;
+  font-family: 'Barlow-Regular';
+  text-transform: uppercase;
+}
+
+.delimiter::before {
+  position: absolute;
+  content: '';
+  width: 130px;
+  height: 1px;
+  top: 50%;
+  left: 45%;
+  transform: translateX(-100%);
+  background-color: #ccc;
+}
+.delimiter::after {
+  position: absolute;
+  content: '';
+  width: 130px;
+  height: 1px;
+  top: 50%;
+  right: 45%;
+  transform: translateX(100%);
+  background-color: #ccc;
+}
+.form__data-user {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+.form__data-user label {
+  border: 0.5px solid #36363618;
+  background-color: #fff;
+  color: #96a5b1;
+  padding: 10px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form__data-user label > input {
+  margin-top: 5px;
+  outline: none;
+  font-size: 16px;
+  font-family: 'Barlow-ExtraLight';
+  font-weight: 200;
+  background-color: #fff;
+}
+
+.form__data-user label > input[type='number']::-webkit-inner-spin-button {
+  display: none;
+}
+
+.form__data-user label:has(input:focus) {
+  border-left: 2px solid #3698fb;
+}
+.form__select {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.form__select-type {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #646464;
+}
+.form__choice-type-investor {
+  display: flex;
+  column-gap: 20px;
+  justify-content: space-between;
+  font-size: 18px;
+  margin: 20px 0 20px 0;
+}
+.form__choice-type-investor label {
+  display: flex;
+  column-gap: 3px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.form__choice-type-investor input,
+.registration__terms input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.form__choice-type-investor label::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border: 3px solid #ccc;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.form__choice-type-investor label::after {
+  content: '\01F6C8';
+  opacity: 0.3;
+}
+.form__choice-type-investor label:has(input:checked)::before {
+  width: 12px;
+  height: 12px;
+  border: 5px solid #3698fb;
+}
+
+.form__investor-text {
+  font-size: 16px;
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 28px 43px 1px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 28px 43px 1px rgba(34, 60, 80, 0.2);
+  box-shadow: 1px 4px 11px 0px rgba(219, 219, 219, 0.842);
+  color: #afafaf;
+  font-size: 14px;
+}
+.registration__terms {
+  font-size: 14px;
+  color: #969696;
+  margin: 30px 0 30px 0;
+}
+
+.registration__terms label {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+.registration__terms label::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border: 1px solid #000000;
+  background-color: #fff;
+}
+.registration__terms label:has(input:checked)::before {
+  content: '';
+  background-image: url('./img/icon-agree-cheked.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.registration__create-account {
+  margin-top: 60px;
+}
+.create-account__button {
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 60px;
+  background-color: #3698fb;
+  border-radius: 5px;
+  font-family: 'Barlow-Bold';
+  font-weight: 600;
 }
